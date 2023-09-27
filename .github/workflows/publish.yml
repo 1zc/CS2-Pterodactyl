@@ -14,7 +14,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build & Publish Docker image
         run: |
-              docker build ./docker/Dockerfile --tag ghcr.io/1zc/steamrt3-pterodactyl:latest
+              docker build --file ./docker/Dockerfile --tag ghcr.io/1zc/steamrt3-pterodactyl:latest
               docker push ghcr.io/1zc/steamrt3-pterodactyl:latest
   publish-docker-image-dev:
     runs-on: ubuntu-latest
@@ -29,5 +29,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build & Publish Docker image
         run: |
-              docker build ./docker/Dockerfile --tag ghcr.io/1zc/steamrt3-pterodactyl:dev
+              docker build --file ./docker/Dockerfile --tag ghcr.io/1zc/steamrt3-pterodactyl:dev
               docker push ghcr.io/1zc/steamrt3-pterodactyl:dev
