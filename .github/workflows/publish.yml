@@ -14,8 +14,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build & Publish Docker image
         run: |
-              docker build . -t ghcr.io/1zc/cs2-pterodactyl/steamrt3-pterodactyl:latest -f docker/Dockerfile
-              docker push ghcr.io/1zc/cs2-pterodactyl/steamrt3-pterodactyl:latest
+              docker build . -t ghcr.io/1zc/steamrt3-pterodactyl:latest -f docker/Dockerfile
+              docker push ghcr.io/1zc/steamrt3-pterodactyl:latest
   publish-docker-image-dev:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/dev' # Running this job only for master branch
@@ -29,5 +29,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build & Publish Docker image
         run: |
-              docker build . -tag ghcr.io/1zc/cs2-pterodactyl/steamrt3-pterodactyl:dev -f docker/Dockerfile
-              docker push ghcr.io/1zc/cs2-pterodactyl/steamrt3-pterodactyl:dev
+              docker build . -tag ghcr.io/1zc/steamrt3-pterodactyl:dev -f docker/Dockerfile
+              docker push ghcr.io/1zc/steamrt3-pterodactyl:dev
