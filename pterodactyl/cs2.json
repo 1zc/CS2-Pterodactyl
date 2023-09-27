@@ -100,7 +100,7 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "max:64",
+            "rules": "required|max:64|alpha_dash",
             "field_type": "text"
         },
         {
@@ -110,7 +110,7 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "max:64",
+            "rules": "required|max:64|alpha_dash",
             "field_type": "text"
         }
     ]
