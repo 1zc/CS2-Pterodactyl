@@ -16,9 +16,9 @@ The underlying Docker image is based on Valve's Steam Runtime 3 (Sniper), which 
 
 ## I want to use the SteamRT3 Docker image directly
 
-The Docker image is hosted on GFL's GitLab registry. You can grab it from here: 
+The Docker image is hosted on the GitHub Container Registry. You can grab it from here: 
 ```
-registry.gitlab.gflclan.com/infra/cs2-pterodactyl:latest
+ghcr.io/1zc/steamrt3-pterodactyl:latest
 ```
 
-Alternatively, you can find a full list of builds here: https://gitlab.gflclan.com/infra/cs2-pterodactyl/container_registry/20
+Alternatively, you can find a full list of builds here: https://github.com/1zc/CS2-Pterodactyl/packages
