@@ -18,7 +18,7 @@
         "SteamRT3-GFL": "registry.gitlab.gflclan.com\/infra\/cs2-pterodactyl:latest"
     },
     "file_denylist": [],
-    "startup": ".\/game\/bin\/linuxsteamrt64\/cs2 -dedicated +ip {{SERVER_IP}} -port {{SERVER_PORT}} +map {{SRCDS_MAP}} +maxplayers {{SRCDS_MAXPLAYERS}}",
+    "startup": ".\/game\/cs2.sh -dedicated +ip {{SERVER_IP}} -port {{SERVER_PORT}} +map {{SRCDS_MAP}}",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \"Connection to Steam servers successful\"\r\n}",
@@ -41,26 +41,6 @@
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|string|alpha_dash",
-            "field_type": "text"
-        },
-        {
-            "name": "Tickrate",
-            "description": "The server tick rate.",
-            "env_variable": "SERVER_TICKRATE",
-            "default_value": "128",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|numeric",
-            "field_type": "text"
-        },
-        {
-            "name": "Maxplayers",
-            "description": "The maximum number of players the server can host.",
-            "env_variable": "SRCDS_MAXPLAYERS",
-            "default_value": "64",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|numeric",
             "field_type": "text"
         },
         {
