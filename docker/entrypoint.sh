@@ -15,11 +15,13 @@ if [ ! -z ${SRCDS_APPID} ]; then
                         STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} -beta ${SRCDS_BETAID} -betapassword ${SRCDS_BETAPASS} +login ${SRCDS_LOGIN} ${SRCDS_LOGIN_PASS} validate +quit"
                     else
                         STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} -beta ${SRCDS_BETAID} -betapassword ${SRCDS_BETAPASS} validate +quit"
+                    fi
                 else
                     if [ ! -z ${SRCDS_LOGIN} ]; then
                         STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} -beta ${SRCDS_BETAID} -betapassword ${SRCDS_BETAPASS} +login ${SRCDS_LOGIN} ${SRCDS_LOGIN_PASS} +quit"
                     else
                         STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} -beta ${SRCDS_BETAID} -betapassword ${SRCDS_BETAPASS} +quit"
+                    fi
                 fi
             else
                 if [ ${SRCDS_VALIDATE} -eq 1 ]; then
@@ -27,11 +29,13 @@ if [ ! -z ${SRCDS_APPID} ]; then
                         STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} -beta ${SRCDS_BETAID} +login ${SRCDS_LOGIN} ${SRCDS_LOGIN_PASS} validate +quit"
                     else             
                         STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} -beta ${SRCDS_BETAID} validate +quit"
+                    fi
                 else
                     if [ ! -z ${SRCDS_LOGIN} ]; then
                         STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} -beta ${SRCDS_BETAID} +login ${SRCDS_LOGIN} ${SRCDS_LOGIN_PASS} +quit"
                     else 
                         STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} -beta ${SRCDS_BETAID} +quit"
+                    fi
                 fi
             fi
         else
@@ -40,11 +44,13 @@ if [ ! -z ${SRCDS_APPID} ]; then
                     STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +login ${SRCDS_LOGIN} ${SRCDS_LOGIN_PASS} validate +quit"
                 else
                     STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} validate +quit"
+                fi
             else
                 if [ ! -z ${SRCDS_LOGIN} ]; then
                     STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +login ${SRCDS_LOGIN} ${SRCDS_LOGIN_PASS} +quit"
                 else
                     STEAMCMD="./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +quit"
+                fi
             fi
         fi
 
