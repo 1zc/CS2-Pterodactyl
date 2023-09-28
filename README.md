@@ -10,7 +10,8 @@ The underlying Docker image is based on Valve's Steam Runtime 3 (Sniper), which 
 
 - Download egg(s) from the `/pterodactyl` directory.
   - `cs2.json`: Egg for CS2
-    - Note: A Steam account that has CS2 in its library is required to download from the `730` app depot that CS2 is in. Configure access to this account in your server's start-up variables.
+    - A Steam account that has CS2 in its library is required to download from the `730` app depot that CS2 is in. Configure access to this account in your server's start-up variables.
+    - Please ensure Steam Guard is disabled on this account, else your first-time install will likely not be able to proceed.
   - `csgo.json`: Egg for CS:GO
 - Import into your Pterodactyl nest of choice. [Read here if you need a guide on how to do this.](https://github.com/parkervcp/eggs#how-to-import-an-egg)
 
