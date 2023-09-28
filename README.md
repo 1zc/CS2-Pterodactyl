@@ -31,4 +31,5 @@ Alternatively, you can find a full list of builds here: https://github.com/1zc/C
   MasterRequestRestart
   Your server needs to be restarted in order to receive the latest update.
   ```
+- If your server keeps trying to restart itself to update, remove `-autoupdate` from your server's start-up command.
 
