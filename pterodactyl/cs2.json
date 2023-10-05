@@ -105,12 +105,12 @@
         },
         {
             "name": "SteamCMD Login Username",
-            "description": "Set SteamCMD Login Username. Leave blank to disable.",
+            "description": "Set SteamCMD Login Username.",
             "env_variable": "SRCDS_LOGIN",
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|max:64|alpha_dash",
+            "rules": "required|max:64|string",
             "field_type": "text"
         },
         {
@@ -120,7 +120,7 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|max:64|alpha_dash",
+            "rules": "required|max:64|string",
             "field_type": "text"
         }
     ]
