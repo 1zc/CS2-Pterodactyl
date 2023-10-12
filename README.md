@@ -11,11 +11,11 @@ The underlying Docker image is based on Valve's Steam Runtime 3 (Sniper), which 
 - Download egg(s) from the `/pterodactyl` directory.
   - `cs2.json`: Egg for CS2
     - A Steam account that has CS2 in its library is required to download from the `730` app depot that CS2 is in. Configure access to this account in your server's start-up variables.
-    - Please ensure Steam Guard is disabled on this account, else your first-time install will likely not be able to proceed.
+    - Please ensure Steam Guard is disabled on this account, else your first-time install and updates will likely not be able to proceed.
   - `csgo.json`: Egg for CS:GO
 - Import into your Pterodactyl nest of choice. [Read here if you need a guide on how to do this.](https://github.com/parkervcp/eggs#how-to-import-an-egg)
 
-## I want to use the SteamRT3 Docker image directly
+## I want to use the Docker image for my own eggs
 
 The Docker image is hosted on the GitHub Container Registry. You can grab it from here: 
 ```
@@ -24,7 +24,20 @@ ghcr.io/1zc/steamrt3-pterodactyl:latest
 
 Alternatively, you can find a full list of builds here: https://github.com/1zc/CS2-Pterodactyl/packages
 
-## Tips
+## Frequent Issues
+
+- My CS2 server's public IP address differs from the containers allocated IP, or my CS2 server is crashing due to failing to bind IP
+  - Make sure you are using the correct IP address, and then try enabling "Force Outgoing IP" in the egg's configuration in your Pterodactyl Panel admin section.
+  - `net_public_adr` doesn't work on CS2 at the time of writing this, so the above is a (hopefully) temporary workaround.
+- I can't enter my Steam Guard code!
+  - **Please use an account with Steam Guard disabled.**
+- What operating systems can I run my CS2 server on?
+  - At the moment, it appears CS2 will run on the following without issues:
+    - Ubuntu 20.04+
+    - Debian 11+
+    - *If you find any more, please open an issue and I'll add it to this list!*
+
+## General Tips
 
 - Check out the repository's [issue tab](https://github.com/1zc/CS2-Pterodactyl/issues) to look for or discussion solutions to problems you may be facing. 
 - Running CS:GO post-CS2 launch will cause the server to constantly spam that it needs an update, you can use the [Cleaner SourceMod extension](https://github.com/accelerator74/Cleaner/tree/master) to get rid of these messages if they're annoying. Edit `addons/sourcemod/configs/cleaner.cfg` and add the following<sup>[#2](https://github.com/1zc/CS2-Pterodactyl/issues/2)</sup>:
@@ -34,4 +47,3 @@ Alternatively, you can find a full list of builds here: https://github.com/1zc/C
   ```
 - If your server on the CS:GO egg keeps trying to restart itself to update (or spamming messages about auto-restarting for updates), remove `-autoupdate` from your server's start-up command.
 - Check out the list of available console variables in CS2 on [Valve's Developer Community wiki](https://developer.valvesoftware.com/wiki/List_of_Counter-Strike_2_console_commands_and_variables).
-
