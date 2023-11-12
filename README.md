@@ -10,8 +10,6 @@ The underlying Docker image is based on Valve's Steam Runtime 3 (Sniper), which 
 
 - Download egg(s) from the `/pterodactyl` directory.
   - `cs2.json`: Egg for CS2
-    - A Steam account that has CS2 in its library is required to download from the `730` app depot that CS2 is in. Configure access to this account in your server's start-up variables.
-    - Please ensure Steam Guard is disabled on this account, else your first-time install and updates will likely not be able to proceed.
   - `csgo.json`: Egg for CS:GO
 - Import into your Pterodactyl nest of choice. [Read here if you need a guide on how to do this.](https://github.com/parkervcp/eggs#how-to-import-an-egg)
 
@@ -29,8 +27,6 @@ Alternatively, you can find a full list of builds here: https://github.com/1zc/C
 - My CS2 server's public IP address differs from the containers allocated IP, or my CS2 server is crashing due to failing to bind IP
   - Make sure you are using the correct IP address, and then try enabling "Force Outgoing IP" in the egg's configuration in your Pterodactyl Panel admin section.
   - `net_public_adr` doesn't work on CS2 at the time of writing this, so the above is a (hopefully) temporary workaround.
-- I can't enter my Steam Guard code!
-  - **Please use an account with Steam Guard disabled.**
 - What operating systems can I run my CS2 server on?
   - At the moment, it appears CS2 will run on the following without issues:
     - Ubuntu 20.04+
