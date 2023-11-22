@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2023-11-12T06:57:40+08:00",
+    "exported_at": "2023-11-22T17:03:21+01:00",
     "name": "Counter-Strike 2 (SteamRT3)",
     "author": "infra@gflclan.com",
     "description": "Counter-Strike is a multiplayer first-person shooter video game developed by Valve. This image is based on Valve's Steam Runtime 3 platform (codenamed SNIPER) and was created to run both CSGO and CS2 without issues.",
@@ -18,7 +18,7 @@
         "SteamRT3-GFL": "registry.gitlab.gflclan.com\/infra\/cs2-pterodactyl:latest"
     },
     "file_denylist": [],
-    "startup": ".\/game\/cs2.sh -dedicated +ip {{SERVER_IP}} -port {{SERVER_PORT}} +map {{SRCDS_MAP}} -maxplayers {{SRCDS_MAXPLAYERS}}",
+    "startup": ".\/game\/cs2.sh -dedicated +ip 0.0.0.0 -port {{SERVER_PORT}} +map {{SRCDS_MAP}} -maxplayers {{SRCDS_MAXPLAYERS}} +sv_setsteamaccount {{STEAM_ACC}}",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \"Connection to Steam servers successful\"\r\n}",
@@ -81,6 +81,16 @@
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|numeric",
+            "field_type": "text"
+        },
+        {
+            "name": "Game Server Login Token (GSLT)",
+            "description": "The Steam Account Token required for the server to be displayed publicly. https:\/\/steamcommunity.com\/dev\/managegameservers",
+            "env_variable": "STEAM_ACC",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "max:32|nullable",
             "field_type": "text"
         }
     ]
