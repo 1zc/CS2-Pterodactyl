@@ -66,9 +66,7 @@ if [ ! -z ${SRCDS_APPID} ]; then
 fi
 
 # Restore gameinfo.gi file
-if [ -f "${GAMEINFO_FILE}" ]; then
-    rm "$GAMEINFO_FILE" && mv "$GAMEINFO_FILE.tmp" "$GAMEINFO_FILE"
-fi
+mv "$GAMEINFO_FILE.tmp" "$GAMEINFO_FILE"
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
