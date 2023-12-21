@@ -6,7 +6,7 @@ This setup is very similar to the stock Pterodactyl Source server setup, so thin
 
 The underlying Docker image is based on Valve's Steam Runtime 3 (Sniper), which should be able to run both CS:GO and CS2 without any issues. The image also can be rebuilt easily as soon as Valve updates their base SteamRT3 image, so we can stay on top of their updates without worrying too much about it. 
 
-The CS2 image also ensures the `gameinfo.gi` file is configured for MetaMod automatically on start-up. 
+The CS2 image also ensures the `gameinfo.gi` file is retained on server restart, which should allow configurations made for MetaMod to persist without issues.
 
 ## How to use
 
