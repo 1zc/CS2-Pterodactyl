@@ -1,10 +1,12 @@
 # CS2 on Pterodactyl
 
-Docker image and Pterodactyl egg to prepare for upcoming CS (CS:GO/CS2) updates. The Docker image is based on the Valve provided SteamRT3 Sniper package, with the Pterodactyl egg featuring a few exposed variables such as Beta selection variables and allowing for skipping SteamCMD on launch (i.e, preventing updates). This should allow existing CSGO servers to easily stay on the opt-in CS:GO branch once CS2 releases.
+Docker image and Pterodactyl egg to run CS2 and CS:GO Servers on Valve's SteamRT3 platform. The Docker image is based on the Valve provided SteamRT3 Sniper package, with the Pterodactyl egg featuring a few exposed variables such as Beta selection variables and allowing for skipping SteamCMD on launch (i.e, preventing updates). This should allow existing CSGO servers to easily stay on the opt-in CS:GO branch (or any particular version of CS:GO) once CS2 releases.
 
 This setup is very similar to the stock Pterodactyl Source server setup, so things should be familiar once imported.
 
 The underlying Docker image is based on Valve's Steam Runtime 3 (Sniper), which should be able to run both CS:GO and CS2 without any issues. The image also can be rebuilt easily as soon as Valve updates their base SteamRT3 image, so we can stay on top of their updates without worrying too much about it. 
+
+The CS2 image also ensures the `gameinfo.gi` file is configured for MetaMod automatically on start-up. 
 
 ## How to use
 
@@ -20,6 +22,11 @@ The Docker image is hosted on the GitHub Container Registry. You can grab it fro
 ghcr.io/1zc/steamrt3-pterodactyl:latest
 ```
 
+The development branch contains upcoming changes that are currently being tested before being merged into main. If you'd like to use that image instead:
+```
+ghcr.io/1zc/steamrt3-pterodactyl:dev
+```
+
 Alternatively, you can find a full list of builds here: https://github.com/1zc/CS2-Pterodactyl/packages
 
 ## Frequent Issues
@@ -28,10 +35,12 @@ Alternatively, you can find a full list of builds here: https://github.com/1zc/C
   - Make sure you are using the correct IP address, and then try enabling "Force Outgoing IP" in the egg's configuration in your Pterodactyl Panel admin section.
   - `net_public_adr` doesn't work on CS2 at the time of writing this, so the above is a (hopefully) temporary workaround.
 - What operating systems can I run my CS2 server on?
-  - At the moment, it appears CS2 will run on the following without issues:
+  - At the moment, it appears CS2 will run on the following host operating systems without issues:
     - Ubuntu 20.04+
     - Debian 11+
     - *If you find any more, please open an issue and I'll add it to this list!*
+- My RCON doesn't work!
+  - Try setting your IP address in the launch command as `0.0.0.0` instead of the actual IP. 
 
 ## General Tips
 
