@@ -62,9 +62,9 @@ fi
 # Edit /home/container/game/csgo/gameinfo.gi to add MetaMod path
 # Credit: https://github.com/ghostcap-gaming/ACMRS-cs2-metamod-update-fix/blob/main/acmrs.sh
 GAMEINFO_FILE="/home/container/game/csgo/gameinfo.gi"
-GAMEINFO_ENTRY="            Game    csgo/addons/metamod"
+GAMEINFO_ENTRY="			Game	csgo/addons/metamod" 
 if [ -f "${GAMEINFO_FILE}" ]; then
-    if grep -Fxq "$GAMEINFO_ENTRY" "$GAMEINFO_FILE"; then
+    if grep -q "Game[[:blank:]]*csgo\/addons\/metamod" "$GAMEINFO_FILE"; then # match any whitespace
         echo "File gameinfo.gi already configured. No changes were made."
     else
         awk -v new_entry="$GAMEINFO_ENTRY" '
@@ -79,7 +79,7 @@ if [ -f "${GAMEINFO_FILE}" ]; then
             /Game_LowViolence/ { found=1; }
         ' "$GAMEINFO_FILE" > "$GAMEINFO_FILE.tmp" && mv "$GAMEINFO_FILE.tmp" "$GAMEINFO_FILE"
 
-        echo "The file ${GAMEINFO_FILE} has been configured successfully."
+        echo "The file ${GAMEINFO_FILE} has been configured for MetaMod successfully."
     fi
 fi
 
