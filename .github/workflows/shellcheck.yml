@@ -1,0 +1,22 @@
+name: "Shellcheck"
+permissions: {}
+on:
+  pull_request:
+    types: [opened, reopened]
+  push:
+    branches:
+      - main
+      - dev
+jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        env:
+          SHELLCHECK_OPTS: -s bash
+        with:
+          severity: error
+          scandir: './docker'

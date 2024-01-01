@@ -7,6 +7,7 @@ LABEL       org.opencontainers.image.source="https://github.com/1zc/cs2-pterodac
 # Prep OS
 RUN         mkdir -p /etc/sudoers.d && echo "%sudo ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/flatdeb && chmod 0440 /etc/sudoers.d/flatdeb
 ENV         DEBIAN_FRONTEND=noninteractive
+RUN         apt update && apt install -y iproute2 && apt-get clean
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
