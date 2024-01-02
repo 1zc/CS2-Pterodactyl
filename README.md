@@ -1,6 +1,6 @@
 # CS2 on Pterodactyl
 
-Docker image and Pterodactyl egg to run CS2 and CS:GO Servers on Valve's SteamRT3 platform. The Docker image is based on the Valve provided SteamRT3 Sniper package, with the Pterodactyl egg featuring a few exposed variables such as Beta selection variables and allowing for skipping SteamCMD on launch (i.e, preventing updates). This should allow existing CSGO servers to easily stay on the opt-in CS:GO branch (or any particular version of CS:GO) once CS2 releases.
+Docker image and Pterodactyl egg to run CS2 and CS:GO Servers on [Valve's SteamRT3 platform](https://gitlab.steamos.cloud/steamrt/sniper/platform). The Docker image is based on the Valve provided SteamRT3 Sniper package, with the Pterodactyl egg featuring a few exposed variables such as Beta selection variables and allowing for skipping SteamCMD on launch (i.e, preventing updates). This should allow existing CSGO servers to easily stay on the opt-in CS:GO branch (or any particular version of CS:GO) once CS2 releases.
 
 This setup is very similar to the stock Pterodactyl Source server setup, so things should be familiar once imported.
 
