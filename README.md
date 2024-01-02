@@ -15,7 +15,7 @@ The CS2 image also ensures the `gameinfo.gi` file is configured for MetaMod auto
   - `csgo.json`: Egg for CS:GO
 - Import into your Pterodactyl nest of choice. [Read here if you need a guide on how to do this.](https://github.com/parkervcp/eggs#how-to-import-an-egg)
 
-## I want to use the Docker image for my own eggs
+## Docker Image Information
 
 The Docker image is hosted on the GitHub Container Registry. You can grab it from here: 
 ```
@@ -25,6 +25,12 @@ ghcr.io/1zc/steamrt3-pterodactyl:latest
 The development branch contains upcoming changes that are currently being tested before being merged into main. If you'd like to use that image instead:
 ```
 ghcr.io/1zc/steamrt3-pterodactyl:dev
+```
+
+You can also find images built with the SteamRT3 Public Beta Branch:
+```
+ghcr.io/1zc/steamrt3-pterodactyl:beta-latest
+ghcr.io/1zc/steamrt3-pterodactyl:beta-dev
 ```
 
 Alternatively, you can find a full list of builds here: https://github.com/1zc/CS2-Pterodactyl/packages
