@@ -14,7 +14,9 @@
     ],
     "docker_images": {
         "SteamRT3": "ghcr.io\/1zc\/steamrt3-pterodactyl:latest",
+        "SteamRT3-PublicBeta": "ghcr.io\/1zc\/steamrt3-pterodactyl:beta-latest",
         "SteamRT3-Dev": "ghcr.io\/1zc\/steamrt3-pterodactyl:dev",
+        "SteamRT3-PublicBetaDev": "ghcr.io\/1zc\/steamrt3-pterodactyl:beta-dev",
         "SteamRT3-GFL": "registry.gitlab.gflclan.com\/infra\/cs2-pterodactyl:latest"
     },
     "file_denylist": [],
