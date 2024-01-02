@@ -1,6 +1,6 @@
 # I N F R A
 # Dockerfile with SteamRT3 
-FROM        registry.gitlab.steamos.cloud/steamrt/sniper/platform 
+FROM        registry.gitlab.steamos.cloud/steamrt/sniper/platform:latest-container-runtime-depot
 LABEL       author="Liam C" maintainer="infra@gflclan.com"
 LABEL       org.opencontainers.image.description SteamRT3 Platform image for Pterodactyl CSGO/CS2/Source engine servers. 
 LABEL       org.opencontainers.image.source="https://github.com/1zc/cs2-pterodactyl"
