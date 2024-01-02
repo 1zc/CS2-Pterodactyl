@@ -12,10 +12,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build & Publish Docker image for LATEST tags
+      - name: Build & Publish Docker image for LATEST tag
         run: |
               docker build . -t ghcr.io/1zc/steamrt3-pterodactyl:latest -f docker/RT3-Dockerfile
               docker push ghcr.io/1zc/steamrt3-pterodactyl:latest
+      - name: Build & Publish Docker image for BETA-LATEST tag
+        run: |
               docker build . -t ghcr.io/1zc/steamrt3-pterodactyl:beta-latest -f docker/RT3Beta-Dockerfile
               docker push ghcr.io/1zc/steamrt3-pterodactyl:beta-latest
   publish-docker-image-dev:
@@ -29,9 +31,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build & Publish Docker image for DEV tags
+      - name: Build & Publish Docker image for DEV tag
         run: |
               docker build . -t ghcr.io/1zc/steamrt3-pterodactyl:dev -f docker/RT3-Dockerfile
               docker push ghcr.io/1zc/steamrt3-pterodactyl:dev
+      - name: Build & Publish Docker image for BETA-DEV tag
+        run: |
               docker build . -t ghcr.io/1zc/steamrt3-pterodactyl:beta-dev -f docker/RT3Beta-Dockerfile
               docker push ghcr.io/1zc/steamrt3-pterodactyl:beta-dev
