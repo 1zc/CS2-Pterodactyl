@@ -1,0 +1,33 @@
+name: publish_beta
+on: [workflow_dispatch]
+jobs:
+  publish-docker-image-main:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' # Running this job only for main branch
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build & Publish Docker image for BETA-LATEST tag
+        run: |
+              docker build . -t ghcr.io/1zc/steamrt3-pterodactyl:beta-latest -f docker/RT3Beta-Dockerfile
+              docker push ghcr.io/1zc/steamrt3-pterodactyl:beta-latest
+  publish-docker-image-dev:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev' # Running this job only for dev branch
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build & Publish Docker image for BETA-DEV tag
+        run: |
+              docker build . -t ghcr.io/1zc/steamrt3-pterodactyl:beta-dev -f docker/RT3Beta-Dockerfile
+              docker push ghcr.io/1zc/steamrt3-pterodactyl:beta-dev
