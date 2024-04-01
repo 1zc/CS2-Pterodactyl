@@ -8,9 +8,12 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 if [ ! -z ${SRCDS_APPID} ]; then
     if [ ${SRCDS_STOP_UPDATE} -eq 0 ]; then
         STEAMCMD=""
+        echo "Starting SteamCMD for AppID: ${SRCDS_APPID}"
         if [ ! -z ${SRCDS_BETAID} ]; then
             if [ ! -z ${SRCDS_BETAPASS} ]; then
                 if [ ${SRCDS_VALIDATE} -eq 1 ]; then
+                    echo "SteamCMD Validate Flag Enabled! Triggered install validation for AppID: ${SRCDS_APPID}"
+                    echo "THIS MAY WIPE CUSTOM CONFIGURATIONS! Please stop the server if this was not intended."
                     if [ ! -z ${SRCDS_LOGIN} ]; then
                         STEAMCMD="./steamcmd/steamcmd.sh +login ${SRCDS_LOGIN} ${SRCDS_LOGIN_PASS} +force_install_dir /home/container +app_update ${SRCDS_APPID} -beta ${SRCDS_BETAID} -betapassword ${SRCDS_BETAPASS} validate +quit"
                     else
@@ -40,6 +43,8 @@ if [ ! -z ${SRCDS_APPID} ]; then
             fi
         else
             if [ ${SRCDS_VALIDATE} -eq 1 ]; then
+            echo "SteamCMD Validate Flag Enabled! Triggered install validation for AppID: ${SRCDS_APPID}"
+            echo "THIS MAY WIPE CUSTOM CONFIGURATIONS! Please stop the server if this was not intended."
                 if [ ! -z ${SRCDS_LOGIN} ]; then
                     STEAMCMD="./steamcmd/steamcmd.sh +login ${SRCDS_LOGIN} ${SRCDS_LOGIN_PASS} +force_install_dir /home/container +app_update ${SRCDS_APPID} validate +quit"
                 else
