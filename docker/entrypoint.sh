@@ -61,6 +61,9 @@ if [ ! -z ${SRCDS_APPID} ]; then
 
         # echo "SteamCMD Launch: ${STEAMCMD}"
         eval ${STEAMCMD}
+        # Issue #44 - We can't symlink this, causes "File not found" errors. As a mitigation, copy over the updated binary on start.
+        cp -f ./steamcmd/linux32/steamclient.so ./.steam/sdk32/steamclient.so
+        cp -f ./steamcmd/linux64/steamclient.so ./.steam/sdk64/steamclient.so
     fi
 fi
 
