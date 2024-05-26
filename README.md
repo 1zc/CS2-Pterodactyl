@@ -13,7 +13,7 @@ The CS2 image also ensures the `gameinfo.gi` file is configured for MetaMod auto
 - Download egg(s) from the `/pterodactyl` directory.
   - `cs2.json`: Egg for CS2
   - `csgo.json`: Egg for CS:GO
-- Import into your Pterodactyl nest of choice. [Read here if you need a guide on how to do this.](https://github.com/parkervcp/eggs#how-to-import-an-egg)
+- Import into your Pterodactyl nest of choice. You can do this by navigating to the Admin section of your Pterodactyl panel, "Nests" under "Service Management", and clicking "Import Egg". 
 
 ## Docker Image Information
 
